@@ -1,16 +1,19 @@
 package cz.pilulka.aircraftmap.features.main.splash
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SplashViewModel @Inject constructor() : ViewModel() {
-    val isSplashFinished = MutableLiveData<Boolean>()
+    val _isSplashFinished = MutableSharedFlow<Boolean>()
+    val isSplashFinished: SharedFlow<Boolean> = _isSplashFinished.asSharedFlow()
 
     init {
         makeSplashDelay()
@@ -19,7 +22,7 @@ class SplashViewModel @Inject constructor() : ViewModel() {
     private fun makeSplashDelay() {
         viewModelScope.launch {
             delay(SPLASH_DELAY)
-            isSplashFinished.value = true
+            _isSplashFinished.emit(true)
         }
     }
 
