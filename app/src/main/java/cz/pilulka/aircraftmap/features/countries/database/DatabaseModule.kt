@@ -14,7 +14,7 @@ import javax.inject.Singleton
 class DatabaseModule {
 
     companion object {
-        private const val DATABASE_NAME = "AsteroidDatabase"
+        private const val DATABASE_NAME = "CountriesDatabase"
     }
 
     @Provides
