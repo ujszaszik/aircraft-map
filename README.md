@@ -6,11 +6,11 @@ Kotlin Plugin version: 1.6.10
 
 Technologies I used:
 
-Jetpack Compose
-Hilt
-Coroutines / Flow
-Retrofit / Moshi
-Room
-Google Maps
-Kotlin DSL
-Timber
+- Jetpack Compose
+- Hilt
+- Coroutines / Flow
+- Retrofit / Moshi
+- Room
+- Google Maps
+- Kotlin DSL
+- Timber
