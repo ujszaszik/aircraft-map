@@ -1,8 +1,9 @@
 package cz.pilulka.aircraftmap.features.aircraft.model
 
 import cz.pilulka.aircraftmap.features.aircraft.network.AircraftListResponse
-import cz.pilulka.extension.notAvailable
+import cz.pilulka.extension.*
 import cz.pilulka.network.mapper.DataMappedFrom
+import kotlin.math.roundToInt
 
 @DataMappedFrom(AircraftListResponse::class)
 data class AircraftListModel(
@@ -32,10 +33,13 @@ val AircraftModel.headerText: String
     get() = "${callSign ?: String.notAvailable} (${originalCountry})"
 
 val AircraftModel.latitudeText: String
-    get() = "Latitude: ${latitude ?: String.notAvailable}"
+    get() = "Latitude: ${latitude.formattedValue(Char.degrees)}"
 
 val AircraftModel.longitudeText: String
-    get() = "Longitude: ${latitude ?: String.notAvailable}"
+    get() = "Longitude: ${longitude.formattedValue(Char.degrees)}"
 
 val AircraftModel.altitudeText: String
-    get() = "Altitude: ${altitude ?: String.notAvailable}"
+    get() = "Altitude: ${altitude.formattedValue(Char.meters)}"
+
+val AircraftModel.velocityText: String
+    get() = "Velocity: ${velocity?.roundToInt().formattedValue(String.kmPerHour)}"

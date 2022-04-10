@@ -6,6 +6,7 @@ import cz.pilulka.network.ApiErrorCodes
 import cz.pilulka.network.call.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 typealias ResourceFlow<T> = Flow<Resource<T>>

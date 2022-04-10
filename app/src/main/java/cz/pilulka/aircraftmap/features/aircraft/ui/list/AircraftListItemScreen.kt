@@ -54,6 +54,13 @@ fun AircraftListItemScreen(aircraft: AircraftModel) {
                 textAlign = TextAlign.Start,
                 fontSize = Dimens.defaultTextSize
             )
+
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = aircraft.velocityText,
+                textAlign = TextAlign.Start,
+                fontSize = Dimens.defaultTextSize
+            )
         }
     }
 

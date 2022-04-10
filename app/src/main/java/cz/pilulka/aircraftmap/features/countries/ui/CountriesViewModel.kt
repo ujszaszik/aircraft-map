@@ -8,6 +8,7 @@ import cz.pilulka.aircraftmap.features.countries.model.CountryModel
 import cz.pilulka.aircraftmap.features.countries.repository.CountriesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
 @HiltViewModel

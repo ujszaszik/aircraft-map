@@ -8,3 +8,6 @@ val String.Companion.space: String
 
 val String.Companion.notAvailable: String
     get() = "N/A"
+
+val String.Companion.kmPerHour: String
+    get() = "km/h"
