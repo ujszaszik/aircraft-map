@@ -44,7 +44,6 @@ dependencies {
     implementations(AndroidLibs.dependencies())
     implementations(ComposeLibs.dependencies())
     implementations(CustomLibs.dependencies())
-    implementations(ImageLibs.dependencies())
     implementations(MapLibs.dependencies())
 
     implementations(MoshiLibs.dependencies())
